@@ -4,14 +4,21 @@ namespace DbOperationWithEFcore_Curd.Data
 {
     public class DatabaseContextProvider
     {
-        public static void ConfigureDbContext(IServiceCollection services, IConfiguration configuration)
+        private readonly ConnectionStringProvider _connectionStringProvider;
+
+        public DatabaseContextProvider(ConnectionStringProvider connectionStringProvider)
         {
-            // Get the connection string from appsettings.json
-            var connectionString = configuration.GetConnectionString("ConnectionStrings");
+            _connectionStringProvider = connectionStringProvider;
+        }
+
+        public void ConfigureDbContext(IServiceCollection services)
+        {
+            var connectionString = _connectionStringProvider.GetConnectionString("ConnectionStrings");
 
             // Register DbContext with SQL Server configuration
             services.AddDbContext<AppDbContext>(options =>
                 options.UseSqlServer(connectionString));
         }
     }
+
 }
