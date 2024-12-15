@@ -1,2 +1,0 @@
-.vs/
-obj/debug/net9.0/

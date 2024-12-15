@@ -1,4 +1,7 @@
 
+using DbOperationWithEFcore_Curd.Data;
+using Microsoft.EntityFrameworkCore;
+
 namespace DbOperationWithEFcore_Curd
 {
     public class Program
@@ -6,6 +9,8 @@ namespace DbOperationWithEFcore_Curd
         public static void Main(string[] args)
         {
             var builder = WebApplication.CreateBuilder(args);
+            // Use the DatabaseContextProvider to configure DbContext
+            DatabaseContextProvider.ConfigureDbContext(builder.Services, builder.Configuration);
 
             // Add services to the container.
 
