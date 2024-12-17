@@ -6,7 +6,7 @@ namespace DbOperationWithEFcore_Curd.Data
     {
         [Key]
         public int CurrencyId { get; set; }
-        public int Currency { get; set; }
+        public string Title { get; set; }
         public string Descripation { get; set; }
     }
 }
