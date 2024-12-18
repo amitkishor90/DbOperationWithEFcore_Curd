@@ -1,0 +1,12 @@
+{
+  "Version": 1,
+  "Hash": "vlQRRz0c0lWaHb/NWJKCexL0M+se6rT8OvkY+KI3bp8=",
+  "Source": "DbOperationWithEFcore_Curd",
+  "BasePath": "_content/DbOperationWithEFcore_Curd",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": [],
+  "Endpoints": []
+}

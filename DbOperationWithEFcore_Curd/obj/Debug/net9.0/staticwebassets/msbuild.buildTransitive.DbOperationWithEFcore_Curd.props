@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\buildMultiTargeting\DbOperationWithEFcore_Curd.props" />
+</Project>

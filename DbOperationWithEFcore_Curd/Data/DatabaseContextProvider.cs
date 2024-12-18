@@ -1,15 +1,20 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace DbOperationWithEFcore_Curd.Data
 {
     public class DatabaseContextProvider
     {
-        public static void ConfigureDbContext(IServiceCollection services, IConfiguration configuration)
-        {
-            // Get the connection string from appsettings.json
-            var connectionString = configuration.GetConnectionString("ConnectionStrings");
+        private readonly ConnectionStringProvider _connectionStringProvider;
 
-            // Register DbContext with SQL Server configuration
+        public DatabaseContextProvider(ConnectionStringProvider connectionStringProvider)
+        {
+            _connectionStringProvider = connectionStringProvider;
+        }
+
+        public void ConfigureDbContext(IServiceCollection services)
+        {
+            var connectionString = _connectionStringProvider.GetConnectionString();
             services.AddDbContext<AppDbContext>(options =>
                 options.UseSqlServer(connectionString));
         }
