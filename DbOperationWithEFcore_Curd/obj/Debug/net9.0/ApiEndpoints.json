@@ -1,5 +1,21 @@
 [
   {
+    "ContainingType": "DbOperationWithEFcore_Curd.Controllers.BooksController",
+    "Method": "AddNewBook",
+    "RelativePath": "api/Books/AddNewBook",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "bookModel",
+        "Type": "DbOperationWithEFcore_Curd.UserDataModel.BooksModel",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "DbOperationWithEFcore_Curd.Controllers.CurrencyController",
     "Method": "GetallCurrency",
     "RelativePath": "api/Currency",

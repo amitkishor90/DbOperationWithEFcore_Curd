@@ -5,6 +5,37 @@
     "version": "1.0"
   },
   "paths": {
+    "/api/Books/AddNewBook": {
+      "post": {
+        "tags": [
+          "Books"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/BooksModel"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/BooksModel"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/BooksModel"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/api/Currency": {
       "get": {
         "tags": [
@@ -63,5 +94,41 @@
       }
     }
   },
-  "components": { }
+  "components": {
+    "schemas": {
+      "BooksModel": {
+        "type": "object",
+        "properties": {
+          "title": {
+            "type": "string",
+            "nullable": true
+          },
+          "descripation": {
+            "type": "string",
+            "nullable": true
+          },
+          "noOfPages": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "isActive": {
+            "type": "boolean"
+          },
+          "createDate": {
+            "type": "string",
+            "format": "date"
+          },
+          "languageId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "country": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  }
 }
