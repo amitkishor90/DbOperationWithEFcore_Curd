@@ -9,9 +9,9 @@
             _configuration = configuration;
         }
 
-        public string GetConnectionString(string name)
+        public string GetConnectionString()
         {
-            return _configuration.GetConnectionString(name);
+            return _configuration.GetConnectionString("DefaultConnection");
         }
     }
 }

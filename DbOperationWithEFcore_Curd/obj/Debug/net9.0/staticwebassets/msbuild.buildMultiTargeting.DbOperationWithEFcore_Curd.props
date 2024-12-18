@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\DbOperationWithEFcore_Curd.props" />
+</Project>

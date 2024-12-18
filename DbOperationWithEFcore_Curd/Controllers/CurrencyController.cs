@@ -1,5 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using DbOperationWithEFcore_Curd.Data;
+﻿using DbOperationWithEFcore_Curd.Data;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
 namespace DbOperationWithEFcore_Curd.Controllers
@@ -11,7 +11,7 @@ namespace DbOperationWithEFcore_Curd.Controllers
         private readonly AppDbContext appContext;
         public CurrencyController(AppDbContext appContext)
         {
-           this.appContext = appContext;
+            this.appContext = appContext;
         }
         [HttpGet("")]
         public async Task<IActionResult> GetallCurrency()
@@ -20,11 +20,24 @@ namespace DbOperationWithEFcore_Curd.Controllers
             return Ok(result);
         }
 
-        [HttpGet("{Id}")]
-        public async Task<IActionResult> GetCurrencybyiD(int Id)
+        [HttpGet("{Id:int}")]
+        public async Task<IActionResult> GetCurrencybyiD([FromRoute] int Id)
         {
-            var result = await appContext.CurrencyTypes.FindAsync(Id);
-            return Ok(result);
+            var GetCurrencybyiDresult = await appContext.CurrencyTypes.FindAsync(Id);
+            return Ok(GetCurrencybyiDresult);
+        }
+
+
+        [HttpGet("{name}")]
+        public async Task<IActionResult> GetCurrencybyName([FromRoute] string name)
+        {
+            var GetCurrencybynameresult = await appContext.CurrencyTypes.
+                                        Where(x => x.Title == name).FirstOrDefaultAsync();
+            if (GetCurrencybynameresult != null)
+            {
+                return Ok(GetCurrencybynameresult);
+            }
+            return Ok(GetCurrencybynameresult);
         }
     }
 }

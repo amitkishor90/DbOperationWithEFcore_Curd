@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace DbOperationWithEFcore_Curd.Data
 {
@@ -13,12 +14,9 @@ namespace DbOperationWithEFcore_Curd.Data
 
         public void ConfigureDbContext(IServiceCollection services)
         {
-            var connectionString = _connectionStringProvider.GetConnectionString("ConnectionStrings");
-
-            // Register DbContext with SQL Server configuration
+            var connectionString = _connectionStringProvider.GetConnectionString();
             services.AddDbContext<AppDbContext>(options =>
                 options.UseSqlServer(connectionString));
         }
     }
-
 }
