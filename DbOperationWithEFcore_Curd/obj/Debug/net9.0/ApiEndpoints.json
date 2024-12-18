@@ -1,6 +1,59 @@
 [
   {
     "ContainingType": "DbOperationWithEFcore_Curd.Controllers.BooksController",
+    "Method": "UpdateBookWithSingleQuery",
+    "RelativePath": "api/Books",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "model",
+        "Type": "DbOperationWithEFcore_Curd.Data.Book",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "DbOperationWithEFcore_Curd.Controllers.BooksController",
+    "Method": "UpdateBook",
+    "RelativePath": "api/Books/{bookId}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "bookId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "model",
+        "Type": "DbOperationWithEFcore_Curd.Data.Book",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "DbOperationWithEFcore_Curd.Controllers.BooksController",
+    "Method": "DeleteBookByIdAsync",
+    "RelativePath": "api/Books/{bookId}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "bookId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "DbOperationWithEFcore_Curd.Controllers.BooksController",
     "Method": "AddNewBook",
     "RelativePath": "api/Books/AddNewBook",
     "HttpMethod": "POST",
@@ -13,6 +66,42 @@
         "IsRequired": true
       }
     ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "DbOperationWithEFcore_Curd.Controllers.BooksController",
+    "Method": "AddBooks",
+    "RelativePath": "api/Books/bulk",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "model",
+        "Type": "System.Collections.Generic.List\u00601[[DbOperationWithEFcore_Curd.UserDataModel.BooksModel, DbOperationWithEFcore_Curd, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "DbOperationWithEFcore_Curd.Controllers.BooksController",
+    "Method": "UpdateBookInBulk",
+    "RelativePath": "api/Books/bulk",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "DbOperationWithEFcore_Curd.Controllers.BooksController",
+    "Method": "DeleteBooksinBulkAsync",
+    "RelativePath": "api/Books/bulk",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
     "ReturnTypes": []
   },
   {
